@@ -1,0 +1,35 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+  background-color: #000;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.appContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #121212;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.mainContent {
+  padding: 24px;
+}
+
+.mainContent h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.mainContent p {
+  color: #aaa;
+  line-height: 1.5;
+}
