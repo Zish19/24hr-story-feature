@@ -1,32 +1,43 @@
-# React + TypeScript + Vite
+# 24hr Story Feature
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A client-side only React application that replicates the 24-hour disappearing "Stories" feature found in Instagram and WhatsApp.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Ephemeral Storage**: Stories are stored locally as Base64 strings and automatically expire and disappear after 24 hours.
+- **Image Processing**: Automatically resizes uploaded images to maintain aspect ratio (max 1080x1920) before saving.
+- **Story Viewer**: Full-screen immersive viewer with a 3-second auto-advance progress bar per story.
+- **Interaction**: 
+  - Click the left/right sides of the screen to navigate.
+  - Swipe left/right on touch devices.
+  - Hold down to pause the progress timer.
+- **Visual Cues**: Colorful gradient ring for unwatched stories, which turns grey once viewed.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React with TypeScript
+- **Bundler**: Vite
+- **Styling**: Vanilla CSS Modules (Dark Mode Theme)
+- **State/Persistence**: React State & `localStorage`
 
-## Expanding the Oxlint configuration
+## Quick Start
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Zish19/24hr-story-feature.git
+   ```
+2. Navigate into the directory and install dependencies:
+   ```bash
+   cd 24hr-story-feature
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Requirements & Constraints Met
+- Client-side only (no backend/database used).
+- Fully responsive design.
+- Image dimensions constrained to max 1080px x 1920px without aspect ratio distortion.
+- Graceful error handling for quota constraints.
